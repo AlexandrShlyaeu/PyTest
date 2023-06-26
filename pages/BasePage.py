@@ -19,8 +19,8 @@ class BasePage:
     def get_element_text(self, by_locator, webdriver_element_number=0):
         return WebDriverWait(self.driver, 10).until(EC.visibility_of_all_elements_located(by_locator))[webdriver_element_number].text
 
-    def is_visible(self, by_locator):
-        element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator))
+    def is_visible(self, by_locator, webdriver_element_number=0):
+        element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator))[webdriver_element_number].text
         return bool(element)
 
     def get_attribute(self, by_locator, attribute, webdriver_element_number=0):
